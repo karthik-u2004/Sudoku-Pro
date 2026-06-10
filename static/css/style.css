@@ -1,0 +1,215 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #f4f6f9;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.controls select,
+.controls button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.controls select {
+    border: 1px solid #ccc;
+}
+
+.controls button {
+    background: #2563eb;
+    color: white;
+    transition: 0.2s;
+}
+
+.controls button:hover {
+    transform: translateY(-2px);
+}
+
+/* Info Cards */
+.game-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.info-card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    min-width: 180px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.info-card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Sudoku Board */
+.board-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+#sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 55px);
+    grid-template-rows: repeat(9, 55px);
+    border: 3px solid black;
+    background: black;
+}
+
+/* Sudoku Cells */
+.cell {
+    width: 55px;
+    height: 55px;
+    border: 1px solid #bbb;
+    background: white;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.cell:focus {
+    background: #dbeafe;
+}
+
+/* Thick vertical borders */
+.cell:nth-child(9n + 3),
+.cell:nth-child(9n + 6) {
+    border-right: 3px solid black;
+}
+
+/* Thick horizontal borders */
+.cell:nth-child(n + 19):nth-child(-n + 27),
+.cell:nth-child(n + 46):nth-child(-n + 54) {
+    border-bottom: 3px solid black;
+}
+
+/* Leaderboard */
+.leaderboard {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.leaderboard h2 {
+    text-align: center;
+}
+
+.leaderboard table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leaderboard th,
+.leaderboard td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #666;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: #111827;
+    color: white;
+}
+
+body.dark-mode header h1 {
+    color: #60a5fa;
+}
+
+body.dark-mode .info-card,
+body.dark-mode .leaderboard {
+    background: #1f2937;
+    color: white;
+}
+
+body.dark-mode .leaderboard th,
+body.dark-mode .leaderboard td {
+    border-color: #374151;
+}
+
+body.dark-mode .cell {
+    background: #374151;
+    color: white;
+    border-color: #4b5563;
+}
+
+body.dark-mode .cell:focus {
+    background: #1e40af;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    #sudoku-board {
+        grid-template-columns: repeat(9, 38px);
+        grid-template-rows: repeat(9, 38px);
+    }
+
+    .cell {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .info-card {
+        min-width: 140px;
+    }
+}

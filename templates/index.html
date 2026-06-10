@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sudoku Pro</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>🧩 Sudoku Pro</h1>
+        <p>Challenge your mind with a modern Sudoku experience.</p>
+    </header>
+
+    <!-- Controls -->
+    <div class="controls">
+        <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+
+        <button id="new-game-btn">🔄 New Game</button>
+        <button id="hint-btn">💡 Hint</button>
+        <button id="theme-btn">🌙 Dark Mode</button>
+    </div>
+
+    <!-- INFO -->
+    <div class="game-info">
+
+        <div class="info-card">
+            <h3>⏱ Timer</h3>
+            <p id="timer">00:00</p>
+        </div>
+
+        <div class="info-card">
+            <h3>🏆 Status</h3>
+            <p id="status">Ready</p>
+        </div>
+
+    </div>
+
+    <!-- BOARD -->
+    <div class="board-section">
+        <div id="sudoku-board"></div>
+    </div>
+
+    <!-- LEADERBOARD -->
+    <div class="leaderboard">
+
+        <h2>🏅 Top Scores</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Difficulty</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+
+            <tbody id="leaderboard-body">
+                <tr>
+                    <td colspan="3">No scores available</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <footer>
+        Built with ❤️ using Flask • Sudoku Pro
+    </footer>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
